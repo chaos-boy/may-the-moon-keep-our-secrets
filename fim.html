@@ -1,0 +1,66 @@
+<<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pasta Protegida</title>
+</head>
+<body>
+
+    <h2>Bem-vindo desasombrado</h2>
+    <p>Digite a senha para acessar "Enigma":</p>
+    
+    <input type="password" id="senhaEnigma" placeholder="Senha Enigma">
+    <button onclick="verificarSenhaEnigma()">Entrar</button>
+    
+    <div id="conteudoEnigma" style="display:none;">
+        <h3>Olá novamente</h3>
+        <p>Só os seus olhos podem ver a verdade</p>
+        <img src="img/foto1.jpg" alt="Imagem Surpresa" width="500" height="auto">
+
+        <ul>
+            <li><a href="#" onclick="mostrarCorrente()">Pasta "Corrente"</a></li>
+        </ul>
+    </div>
+
+    <div id="pastaCorrente" style="display:none;">
+        <h3>Pasta "Corrente":</h3>
+        <p>Digite a senha para acessar "Corrente":</p>
+        <input type="password" id="senhaCorrente" placeholder="Senha Corrente">
+        <button onclick="verificarSenhaCorrente()">Entrar</button>
+        
+        <div id="conteudoCorrente" style="display:none;">
+            <!-- Removido o <ul> e agora a imagem é exibida diretamente sem recuo ou pontuação indesejada -->
+            <img src="img/foto2.png" alt="Imagem Surpresa" width="500" height="auto">
+        </div>
+    </div>
+
+    <script>
+        function verificarSenhaEnigma() {
+            var senhaEnigma = document.getElementById("senhaEnigma").value;
+            if (senhaEnigma === "0329") {
+                document.getElementById("conteudoEnigma").style.display = "block";
+                alert("Senha correta! Você acessou a pasta 'Enigma'.");
+            } else {
+                alert("Senha incorreta. Tente novamente.");
+            }
+        }
+
+        function mostrarCorrente() {
+            document.getElementById("pastaCorrente").style.display = "block";
+        }
+
+        function verificarSenhaCorrente() {
+            var senhaCorrente = document.getElementById("senhaCorrente").value;
+            if (senhaCorrente === "Medo" || senhaCorrente === "MEDO" || senhaCorrente === "medo") {
+                document.getElementById("conteudoCorrente").style.display = "block";
+                alert("Senha correta! Você acessou a pasta 'Corrente'.");
+            } else {
+                alert("Senha incorreta. Tente novamente.");
+            }
+        }
+    </script>
+
+</body>
+</html>
+
